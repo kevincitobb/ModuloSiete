@@ -7,6 +7,9 @@ android {
     namespace 'dgitc.unam.modulosiete'
     compileSdk 32
 
+    viewBinding{
+        enabled=true
+    }
     defaultConfig {
         applicationId "dgitc.unam.modulosiete"
         minSdk 21

@@ -1,4 +1,4 @@
-package dgtic.unam.modulosiete
+package dgitc.unam.modulosiete
 
 import android.animation.Animator
 import android.content.Context
@@ -11,8 +11,6 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
-import dgitc.unam.modulosiete.Card
-import dgitc.unam.modulosiete.R
 
 class MaterialAdapter(private val context: Context, private val listaTarjetas: ArrayList<Card>) :
     RecyclerView.Adapter<MaterialAdapter.ViewHolder>() {

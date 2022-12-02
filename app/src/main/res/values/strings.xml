@@ -70,5 +70,10 @@
     <string name="serie_x">Serie X</string>
     <string name="logo_compra">logo compra</string>
     <string name="collapsingtoolbarlayout">Collapsingtoolbarlayout</string>
+    <string name="imagen_pelicula">Imagen Pelicula</string>
+    <string name="videoActivity">Video Activity</string>
+    <string name="canciones_mp3">Canciones MP3</string>
+    <string name="sonidoActivity">Sonido Activity</string>
+    <string name="RecyclerViewActivity">Recycler View Activity</string>
 
 </resources>
