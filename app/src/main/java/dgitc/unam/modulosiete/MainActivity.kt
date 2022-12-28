@@ -1,5 +1,6 @@
 package dgitc.unam.modulosiete
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,12 @@ import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import androidx.appcompat.widget.Toolbar
 
+enum class ProviderType {
+    BASIC,
+    CORREO,
+    GOOGLE,
+    FACEBOOK
+}
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener { private lateinit var drawer: DrawerLayout
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,16 +52,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivity(Intent(this, ConstraintActivity::class.java))
             }
             R.id.nestedscrollview->{
-                startActivity(Intent(this,NestedScrollViewActivity::class.java))
+                startActivity(Intent(this, NestedScrollViewActivity::class.java))
             }
             R.id.collapsing->{
-                startActivity(Intent(this,CollapsingToolbarLayout::class.java))
+                startActivity(Intent(this, CollapsingToolbarLayout::class.java))
             }
             R.id.video->{
-                startActivity(Intent(this,MainActivityVideo::class.java))
+                startActivity(Intent(this, MainActivityVideo::class.java))
             }
             R.id.sonido->{
-                startActivity(Intent(this,MainActivitySonido::class.java))
+                startActivity(Intent(this, MainActivitySonido::class.java))
             }
             R.id.recycler_view->{
                 startActivity(Intent(this,RecyclerView::class.java))
@@ -64,5 +71,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         drawer.closeDrawer(GravityCompat.START)
         return true
+    }
+    // Comprobacion de correo y metodo de ingreso
+    private fun setup(email: String, providerType: String) {
+        //binding.emailTextView.text = email
+        //binding.providerTextView.text = providerType
+
+        // Se almacenan los datos de inicio de sesion
+        val preferencias = getSharedPreferences(getString(R.string.file_preferencia), Context.MODE_PRIVATE).edit()
+        preferencias.putString("email", email)
+        preferencias.putString("proovedor", providerType)
+        preferencias.apply()
     }
 }
